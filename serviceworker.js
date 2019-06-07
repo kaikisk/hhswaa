@@ -27,6 +27,7 @@ var STATIC_FILES = [
     ORIGIN + '/javaScript/newlogin.js',
     ORIGIN + '/javaScript/result.js',
     ORIGIN + '/jquery-2.2.4.min.js',
+    ORIGIN + '/javaScript/notification.js',
 ];
 
 var STATIC_FILE_URL_HASH = {};
