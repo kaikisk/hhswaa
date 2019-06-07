@@ -17,7 +17,7 @@
         <script> 
             console.log('loading serviceworker');
             navigator.serviceWorker
-                .register('./firebase-messaging-sw.js', { scope: '.'})
+                .register('./serviceworker.js', { scope: '.'})
                 .then(function(registration) {
                     console.log('service worker completd');
                     registration.update();
@@ -47,11 +47,11 @@
         var notification = new Notification("Hi there!");
       }
     });
-  }
+   }
 
-  // 最後に、ユーザが通知を拒否した場合は、これ以上ユーザに 
-  // 迷惑をかけてはいけないことを尊重すべきです。
-}
+   // 最後に、ユーザが通知を拒否した場合は、これ以上ユーザに 
+   // 迷惑をかけてはいけないことを尊重すべきです。
+   }
             </script>
         <header class="bar bar-nav">
             <h1 class="title">健康手帳(HealthHandbook)</h1>
@@ -76,39 +76,6 @@
                 </p>
             </div>
 
-         <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
-
-        <!-- TODO: Add SDKs for Firebase products that you want to use
-             https://firebase.google.com/docs/web/setup#config-web-app -->
-        
-        
-        <script>
-             const messaging = firebase.messaging();
-             messaging.requestPermission().then(function() {
-             console.log('Notification permission granted.');
-             // TODO(developer): Retrieve an Instance ID token for use with FCM.
-             // ...
-             }).catch(function(err) {
-             console.log('Unable to get permission to notify.', err);
-             });    
-            firebase.initializeApp(firebaseConfig);
-        </script>
-
-        <script>
-          // Your web app's Firebase configuration
-          var firebaseConfig = {
-            apiKey: "AIzaSyBJgLkz6Fg584qVB1LooCmRA7myP_7Xezs",
-            authDomain: "healthbook-242216.firebaseapp.com",
-            databaseURL: "https://healthbook-242216.firebaseio.com",
-            projectId: "healthbook-242216",
-            storageBucket: "healthbook-242216.appspot.com",
-            messagingSenderId: "664067518579",
-            appId: "1:664067518579:web:c29181e4699321cd"
-          };
-          // Initialize Firebase
-          firebase.initializeApp(firebaseConfig);
-        </script>
     </body>
 
 </html>
