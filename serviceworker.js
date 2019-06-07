@@ -1,4 +1,4 @@
-var ORIGIN = location.protocol + '//' + location.hostname + '/hhswa';
+var ORIGIN = location.protocol + '//' + location.hostname + '/hhswaa';
 var STATIC_CACHE_NAME = 'static_v1';
 console.log('ORIGIN : ' + ORIGIN);
 var STATIC_FILES = [
@@ -138,16 +138,3 @@ self.addEventListener('activate', function(event) {
             })
     );
 });
-
-self.addEventListener('push', function(event) {
-    event.waitUntil(
-        self.registration.showNotification('Push Received', {
-            body: 'Push Notification Received',
-            tag: 'push-notification-tag' 
-        })
-    );
-});
-
-self.addEventListener("notificationclick", function(event) {
-    event.notification.close();
-}, false);
